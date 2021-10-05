@@ -1,0 +1,2 @@
+Chaos Monkey is responsible for randomly terminating instances in production to ensure that engineers implement their services to be resilient to instance failures.
+Once you're up and running, see configuring behavior via Spinnaker for how users can customize the behavior of Chaos Monkey for their apps.

@@ -1,0 +1,1 @@
+A decryptor allows you to use encrypted versions of the passwords for the MySQL database and Spinnaker p12 certificate (see configuration file format). Chaos Monkey will invoke the decryptor to decrypt the passwords before using them.
