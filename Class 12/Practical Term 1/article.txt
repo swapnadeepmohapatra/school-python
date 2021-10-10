@@ -1,0 +1,3 @@
+WebAssembly is designed to maintain the versionless, feature-tested, and backwards-compatible nature of the web.
+WebAssembly modules will be able to call into and out of the JavaScript context and access browser functionality
+through the same Web APIs accessible from JavaScript. WebAssembly also supports non-web embeddings.

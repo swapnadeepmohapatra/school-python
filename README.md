@@ -10,11 +10,13 @@
 - [Number of vowels and consonants](./Class%2012/File/6.py)
 - [Change all the first character the words to the next alphabet and write in a new file](./Class%2012/File/aa.py)
 - [Switch the cases and write in a new file](./Class%2012/File/bb.py)
+- [Change data in the file itself](./Class%2012/File/7.py)
 
 ## Binary File Handaling
 
 - [Write and Read Name and Age of Employees data](./Class%2012/Binary/1.py)
 - [Append more Name and Age to Employees data](./Class%2012/Binary/2.py)
 - [Reading Name and Age to Employees data with with](./Class%2012/Binary/3.py)
+- [Searching from Employees data](./Class%2012/Binary/4.py)
 
 ## CSV File Handaling
