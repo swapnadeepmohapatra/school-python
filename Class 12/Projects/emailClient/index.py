@@ -1,57 +1,7 @@
 import random
+import pickle
 
-dataStore = {
-    "accounts": [
-        {
-            "id": "btxr2ny834hn2rx",
-            "mailID": "example@company.com",
-            "password": "abcxyz",
-            "name": "Modi"
-        }, {
-            "id": "ny89cr24dilmqwhbct89q34",
-            "mailID": "company@example.com",
-            "password": "xyzabc",
-            "name": "Amit Shah"
-        }],
-    "mails": {
-        "btxr2ny834hn2rx": {
-            "received": [
-                {
-                    "id": 1,
-                    "recipient": "btxr2ny834hn2rx",
-                    "sender": "ny89cr24dilmqwhbct89q34",
-                    "subject": "Fired",
-                    "body": "You are fired. Don't come to office from tomorrow. And send your laptop to us latest by EOD.",
-                }, {
-                    "id": 2,
-                    "recipient": "btxr2ny834hn2rx",
-                    "sender": "ny89cr24dilmqwhbct89q34",
-                    "subject": "Payment success",
-                    "body": "₹50,000.00 has been deposited to Zerodha equity from account 9380 through UPI on 16 Aug 2021. Your transaction Reference number is 7113688311563099.",
-                }
-            ],
-            "sent": []
-        },
-        "ny89cr24dilmqwhbct89q34": {
-            "received": [],
-            "sent": [
-                {
-                    "id": 1,
-                    "recipient": "btxr2ny834hn2rx",
-                    "sender": "ny89cr24dilmqwhbct89q34",
-                    "subject": "Fired",
-                    "body": "You are fired. Don't come to office from tomorrow. And send your laptop to us latest by EOD.",
-                }, {
-                    "id": 2,
-                    "recipient": "btxr2ny834hn2rx",
-                    "sender": "ny89cr24dilmqwhbct89q34",
-                    "subject": "Payment success",
-                    "body": "₹50,000.00 has been deposited to Zerodha equity from account 9380 through UPI on 16 Aug 2021. Your transaction Reference number is 7113688311563099.",
-                }
-            ],
-        }
-    }
-}
+dataStore = {}
 
 welcomeMessage = """
 Please Choose among the below options
@@ -64,6 +14,8 @@ Enter Your Choice:"""
 
 
 def main():
+    readFile()
+
     char = input("Do you have an account? y/n: ")
     if char.lower() == "y":
         mailId = input("Enter Email ID: ")
@@ -71,6 +23,28 @@ def main():
         checkIdPass(mailId, password)
     else:
         createNewAccount()
+
+    writeFile()
+
+
+def readFile():
+    file = open("email_database.dat", "rb")
+    data = {}
+    try:
+        while True:
+            data = (pickle.load(file))
+    except EOFError:
+        pass
+
+    global dataStore
+    dataStore = data
+    file.close()
+
+
+def writeFile():
+    file = open("email_database.dat", "wb")
+    pickle.dump(dataStore, file)
+    file.close()
 
 
 def checkIdPass(mailId, password):
@@ -183,7 +157,7 @@ def sendMail(receiver, subject, body, senderUserId):
         "body": body,
     })
 
-    print(dataStore["mails"])
+    # print(dataStore["mails"])
 
 
 def getUserFromId(id):
