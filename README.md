@@ -20,3 +20,16 @@
 - [Searching from Employees data](./Class%2012/Binary/4.py)
 
 ## CSV File Handaling
+
+- [Write Name and Phone number into a CSV file](./Class%2012/CSV/1.py)
+
+## MySql
+
+- [Basic Create and Insert Values](./Class%2012/Sql/1.sql)
+- [CRUD Operations in a table](./Class%2012/Sql/2.sql)
+- [Some Functions](./Class%2012/Sql/3.sql)
+- [ORDER BY, DISTINCT, COUNT, GROUP BY, etc](./Class%2012/Sql/4.sql)
+
+## MySql Python Connection
+
+- [Read data from table (SELECT * FROM users)](./Class%2012/PythonSql/1.py)

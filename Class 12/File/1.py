@@ -47,3 +47,7 @@ def readingFileInALine(filename):
 # readFileLineByLine1("1.txt")
 # readFileLineByLine2("1.txt")
 # readingFileInALine("1.txt")
+
+file = open("1.txt", "r")
+print(file.readlines(500))
+file.close()

@@ -1,15 +1,29 @@
-f = open("data.txt", 'w')
-f.write("Hello")
-f.write("Welcome to my Blog")
-f.close()
-f = open("data.txt", 'r')
-d = f.read(5)
-print(d)  # First Print Statement
-f.seek(10)
-d = f.read(3)
-print(d)  # Second Print Statement
-f.seek(13)
-d = f.read(5)
-print(d)  # Third Print Statement
-d = f.tell()
-print(d)  # Fourth Print Statement
+# import csv
+# print("Enter your name and roll number to see your subject marks...\n")
+# name = input("Enter Name exactly as in Hall Ticket: ")
+# rollno = input("Enter Roll No.: ")
+# with open('student_marks.csv') as csv_file:
+# 	csv_reader = csv.reader(csv_file, delimiter=',')
+# 	line_count = 0
+# 	match_found = False
+# 	for row in csv_reader:
+# 		line_count += 1
+# 		if line_count == 1:
+# 			continue
+# 		else:
+# 			if row[0].lower() == name.lower() and row[1] == rollno:
+# 				match_found = True
+# 				eng_marks = row[3]
+# 				maths_marks = row[4]
+# 				cs_marks = row[5]
+# 				print("\n"+row[0]+"'s marks are:\nEnglish:",eng_marks)
+# 				print("Maths:", maths_marks, "\nComp Sc:", cs_marks,"\n\nThank you!")
+# 				break
+# 	if match_found == False:
+# 		print ("\nNo matching name and roll number found. Please check and re-enter")
+
+txt = "How are you, Ravi?"
+x = txt.find(",")
+y = txt.find("?")
+print(x)
+print(txt[x+2:y])
